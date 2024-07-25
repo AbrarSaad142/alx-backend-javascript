@@ -4,7 +4,7 @@ export default class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
     super(sqft);
     /* eslint no-underscore-dangle: 0 */
-    this._fllors = floors;
+    this._floors = floors;
   }
 
   get floors() {
