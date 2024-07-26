@@ -31,7 +31,8 @@ export class StudentHolberton {
   }
 
   get holbertonClass() {
-    return this.holbertonClass;
+    /* eslint no-underscore-dangle: 0 */
+    return this._holbertonClass;
   }
 
   get fullStudentDescription() {
@@ -39,6 +40,7 @@ export class StudentHolberton {
     return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`;
   }
 }
+
 const class2019 = new HolbertonClass(2019, 'San Francisco');
 const class2020 = new HolbertonClass(2020, 'San Francisco');
 
