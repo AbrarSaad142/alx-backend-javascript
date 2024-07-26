@@ -4,6 +4,10 @@ export default class Currency {
     this.name = name;
   }
 
+  displayFullCurrency() {
+    return `${this._name} (${this._code})`;
+  }
+
   get code() {
     /* eslint no-underscore-dangle: 0 */
     return this._code;
