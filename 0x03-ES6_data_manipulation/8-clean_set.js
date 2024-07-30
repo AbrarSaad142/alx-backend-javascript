@@ -1,13 +1,20 @@
 export default function cleanSet(set, startString) {
-  if (startString === '') {
-    return '';
-  }
-
-  // Use Array.from to convert the set to an array and filter the values
-  const filteredValues = Array.from(set)
-    .filter((value) => value.startsWith(startString))
-    .map((value) => value.slice(startString.length));
-
-  // Join the filtered values with '-' and return the resulting string
+    if (
+        !set && !startString && !(set instanceof Set) && typeof startString !== 'string'
+      ) {
+        return '';
+      }
+    
+      const parts = [];
+    
+      for (const value of set.values()) {
+        if (typeof value === 'string' && value.startsWith(startString)) {
+          const valueSubStr = value.substring(startString.length);
+    
+          if (valueSubStr && valueSubStr !== value) {
+            parts.push(valueSubStr);
+          }
+        }
+      }
   return filteredValues.join('-');
 }
